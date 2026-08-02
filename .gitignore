@@ -1,0 +1,5 @@
+# Packaged skill build artifacts — attach to Releases instead
+*.skill
+
+.DS_Store
+__pycache__/
