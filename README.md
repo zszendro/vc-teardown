@@ -14,9 +14,9 @@ Most ideas fail not because they're bad, but because the obvious version is alre
 
 **2. Research** — searches for direct incumbents, free substitutes, adjacent software your buyer already pays for, and evidence the pain is real. This step is non-negotiable: skipping it produces generic startup advice.
 
-**3. Teardown** — 8–12 numbered challenges drawn from a library of 16 attack surfaces. Every challenge ends in a concrete revision. Criticism that doesn't change the plan doesn't count.
+**3. Teardown** — 8–12 numbered challenges drawn from a library of 20 attack surfaces. Every challenge ends in a concrete revision. Criticism that doesn't change the plan doesn't count.
 
-**4. Moat** — the reframe. Nine patterns for finding defensibility, including the two that do most of the work: *generate the data instead of aggregating it*, and *find the incumbent's metric mismatch*.
+**4. Moat** — the reframe. Twelve patterns for finding defensibility, including the two that do most of the work: *generate the data instead of aggregating it*, and *find the incumbent's metric mismatch*.
 
 **5. Plan** — market reality, tiered use cases, revenue lines ordered by when they turn on, unit economics with the actual arithmetic, MVP scope and stack, GTM, risk register, and falsifiable kill criteria.
 
@@ -50,13 +50,18 @@ It's also calibrated not to be contrarian for sport. If a challenge has a good a
 
 **Claude apps** — download `vc-teardown.skill` from [Releases](../../releases) and click **Save skill** on the file card in a conversation.
 
-**Claude Code** — clone into your skills directory:
+**Claude Code** — clone anywhere, then symlink the skill folder into your skills directory:
 
 ```bash
-git clone https://github.com/zszendro/vc-teardown.git ~/.claude/skills/vc-teardown
+git clone https://github.com/zszendro/vc-teardown.git ~/src/vc-teardown
+ln -s ~/src/vc-teardown/vc-teardown ~/.claude/skills/vc-teardown
 ```
 
-**Manual** — copy the `vc-teardown/` folder into wherever your setup loads skills from.
+Claude Code follows the symlink and reads `SKILL.md` from the target, so `git pull` updates the skill in place.
+
+Cloning straight into `~/.claude/skills/vc-teardown` does **not** work: this repo's root holds the README and LICENSE, so `SKILL.md` would land at `~/.claude/skills/vc-teardown/vc-teardown/SKILL.md` — one level deeper than skill discovery looks.
+
+**Manual** — copy the inner `vc-teardown/` folder (not the repo root) into wherever your setup loads skills from.
 
 ---
 
@@ -84,20 +89,21 @@ Two things worth telling it up front, since they change the analysis: **where yo
 vc-teardown/
 ├── SKILL.md                        # workflow + tone calibration
 └── references/
-    ├── challenge-library.md        # 16 attack surfaces
-    ├── moat-patterns.md            # 9 reframes
-    └── plan-template.md            # output structure
+    ├── challenge-library.md        # 20 attack surfaces
+    ├── moat-patterns.md            # 12 reframes
+    ├── plan-template.md            # output structure
+    └── example-teardown.md         # one idea, worked end to end
 ```
 
 Reference files load only when needed, so the skill stays cheap in context until it's actually working.
 
-### The 16 challenges
+### The 20 challenges
 
-Competition · Free substitutes · Monetization · Willingness to pay · Cold start · Distribution · Buyer incentive · Sales cycle · Data availability · Regulatory & liability · Founder-market fit · Capital efficiency · Defensibility · Feature-not-a-company · Retention · Scale honesty
+Competition · Free substitutes · Monetization · Willingness to pay · Cold start · Distribution · Buyer incentive · Sales cycle · Data availability · Regulatory & liability · Founder-market fit · Capital efficiency · Defensibility · Feature-not-a-company · Retention · Scale honesty · Timing · Platform dependency · AI-native risk · Atoms and capital intensity
 
-### The 9 moat patterns
+### The 12 moat patterns
 
-Demote the commodity · Generate the data, don't aggregate it · Sell operational relief, not marketing exposure · The incumbent's metric mismatch · Granted distribution beats won distribution · The unserved 80% · Institutional switching cost · Vertical depth over horizontal reach · Sequence the moat
+Demote the commodity · Generate the data, don't aggregate it · Sell operational relief, not marketing exposure · The incumbent's metric mismatch · Granted distribution beats won distribution · The unserved 80% · Institutional switching cost · Vertical depth over horizontal reach · Embedded distribution · Proprietary model or eval set · Regulatory or license position · Sequence the moat
 
 ---
 
