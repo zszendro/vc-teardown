@@ -2,7 +2,7 @@
 
 Standard attack surfaces. Work through them; skip the ones that don't apply. Each entry gives the challenge, what evidence to look for, and the shape of the plan change it usually forces.
 
-**Contents:** 1 Competition · 2 Free substitutes · 3 Monetization · 4 Willingness to pay · 5 Cold start · 6 Distribution · 7 Buyer incentive · 8 Sales cycle · 9 Data availability · 10 Regulatory & liability · 11 Founder-market fit · 12 Capital efficiency · 13 Defensibility · 14 Feature-not-a-company · 15 Retention · 16 Scale honesty
+**Contents:** 1 Competition · 2 Free substitutes · 3 Monetization · 4 Willingness to pay · 5 Cold start · 6 Distribution · 7 Buyer incentive · 8 Sales cycle · 9 Data availability · 10 Regulatory & liability · 11 Founder-market fit · 12 Capital efficiency · 13 Defensibility · 14 Feature-not-a-company · 15 Retention · 16 Scale honesty · 17 Timing · 18 Platform dependency · 19 AI-native risk · 20 Atoms and capital intensity
 
 ---
 
@@ -131,3 +131,45 @@ Discovery products get used once. Name the weekly recurring reason to open the t
 Compute the realistic revenue of one fully-penetrated beachhead. Multiply by the number of beachheads reachable in five years. If the result is a good $2M business rather than a $200M one, that is a finding, not a failure — but it must be stated, because pitching it wrongly fails diligence and misallocates the founder's next year.
 
 **Typical change:** reframe the funding strategy — bootstrap, revenue-financed, or small seed — rather than reframing the business.
+
+## 17. Timing — "why now?"
+
+Almost every idea that looks obvious has been tried. The useful question is not whether someone attempted it but what has changed since they did.
+
+Look for a specific, dateable enabling shift: a cost curve that crossed a threshold, a regulation that passed, a platform that opened an API, a behaviour that normalised, an incumbent that retreated. Name it and date it. "The market is growing" is not a why-now.
+
+Then check the graveyard. Prior attempts are the most underrated research available — they tell you what the failure mode actually is, and founders who can't name their predecessors are usually about to repeat them. If several companies died at the same wall, assume you will hit it too unless the plan says specifically why not.
+
+The uncomfortable version of this challenge: if nothing changed, the honest reading is either that the market already rejected this, or that you're early. Being early is indistinguishable from being wrong, and it burns the same amount of money.
+
+**Typical change:** anchor the plan to the named enabling change, and add the prior attempts with a sentence each on what killed them and what's different now.
+
+## 18. Platform dependency — "whose permission does this need?"
+
+Anything built on an app store, an API, a single data source, or one distribution partner is operating on borrowed access. The question is not whether the platform *would* revoke it but what happens when it does.
+
+Look for: the platform's track record on pricing and terms, whether it has shipped a competing first-party feature before, and what share of value the product captures that the platform can see. Visible margin on someone else's rails is an invitation.
+
+Distinguish the two failure modes, because they need different answers. **Price risk** — the platform raises rates and compresses your margin — is survivable and can be modelled. **Existence risk** — the platform ships your feature or closes the API — is not, and the only real mitigations are a second channel or owning the customer relationship directly.
+
+**Typical change:** name the dependency explicitly in the risk register with a concrete trigger, and either build a second acquisition path before scaling or move the value to the layer the platform can't see.
+
+## 19. AI-native risk — "what happens when the model gets better and cheaper?"
+
+The default assumption should be that the underlying models get substantially more capable and an order of magnitude cheaper on the timescale of the plan. Ask what that does to the product.
+
+The distinction that matters: does the product **ride** model improvement or get **absorbed** by it? A thin prompt-and-UI layer over a general capability gets absorbed — the model vendor ships it, or the buyer's existing software ships it, and the wrapper has nothing left. A product whose value sits in the workflow, the proprietary data, the integrations, the compliance posture, or the accountability for being wrong rides it instead: better models make it cheaper to run and better to use.
+
+Two further tests. **Model commoditisation:** if switching the underlying model is a config change, that's good for margin and bad for defensibility — the moat has to be somewhere else. **Accuracy economics:** if the output must be right and a human still checks every one, the labour saving is much smaller than the demo implies, and the pricing has to reflect the review step rather than the generation step.
+
+**Typical change:** move the value claim from the generation to whatever surrounds it — the data, the workflow, the integration, the liability — and state plainly what the product still owns after the base model absorbs the obvious feature.
+
+## 20. Atoms and capital intensity
+
+Hardware, inventory, logistics, clinical work, licensed facilities and long R&D obey different arithmetic than software, and software-shaped plans applied to them fail in predictable ways.
+
+Check for: per-unit cost of goods that doesn't fall much with volume; working capital tied up in inventory before any revenue arrives; a bill of materials with a single supplier; certification, testing or trial timelines measured in quarters or years; and the fact that iteration costs a tooling run rather than a deploy.
+
+The specific trap is treating the first working unit as the hard part. It usually isn't — manufacturing at yield, servicing returns, and financing inventory are, and none of them appear in an MVP plan written for software. Long-timeline categories add a second trap: the milestone that unlocks the next round can sit years out, which makes the financing plan the binding constraint rather than the technology.
+
+**Typical change:** separate the technical proof from the commercial proof and finance them differently — grants, non-dilutive funding, pre-orders or a design partner for the first, equity for the second — and re-time the plan around the certification or tooling lead time rather than around the software sprint.

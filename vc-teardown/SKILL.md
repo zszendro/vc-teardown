@@ -64,7 +64,7 @@ Write **8–12 numbered challenges**. Each one:
 
 The `→ Change` line is what separates this from criticism. If a challenge produces no change, it isn't a real challenge.
 
-Read `references/challenge-library.md` for the standard attack surfaces to work through — competition, monetization, cold start, distribution, buyer incentive, sales cycle, regulatory/liability, founder-market fit, capital efficiency, and defensibility. Work through them rather than inventing challenges ad hoc; the library exists so nothing structural gets missed.
+Read `references/challenge-library.md` for the standard attack surfaces to work through — competition, monetization, cold start, distribution, buyer incentive, sales cycle, regulatory/liability, founder-market fit, capital efficiency, defensibility, timing, platform dependency, AI-native risk, and capital intensity. Work through them rather than inventing challenges ad hoc; the library exists so nothing structural gets missed.
 
 Close the teardown with a one-line surviving thesis: *"[Original framing] is dead on arrival; [reframed wedge] is a real business because [reason]."*
 
