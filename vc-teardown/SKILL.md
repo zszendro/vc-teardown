@@ -82,6 +82,7 @@ This is the highest-value part of the skill and the hardest. Read `references/mo
 - **Find the incumbent's metric mismatch.** A company optimizing national MAU will not build a low-ARPU, high-touch, per-venue operations tool. That refusal is structural, not an oversight — and it's durable.
 - **Prefer granted distribution to won distribution.** An institution telling its users to adopt something beats an SEO race.
 - **Hunt for the unserved 80%.** Software usually serves the professionalized minority of a market. The informal majority is bigger, ignored, and reachable.
+- **Own the eval set, not the model.** For anything AI, the base model is available to everyone. Knowing exactly what "correct" means in the domain — and holding the labelled corpus of hard cases that proves it — is what competitors can't copy in an afternoon.
 
 State the reframed positioning in one sentence the user could say out loud, then explain in three or four bullets why it's defensible.
 
