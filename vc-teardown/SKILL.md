@@ -90,6 +90,8 @@ State the reframed positioning in one sentence the user could say out loud, then
 
 Use the structure in `references/plan-template.md`. It covers: market reality, the teardown, the reframed strategy, stakeholder use cases tiered MVP/v1.1/v2, business model with revenue lines in the order they turn on, unit economics, MVP scope and stack, GTM, metrics, risk register, kill criteria, and open questions.
 
+`references/example-teardown.md` is a complete pass over one idea — read it when you want the shape of the output rather than the rules for producing it. Its market facts are invented for illustration; yours must be researched.
+
 Non-negotiable elements, because they're the ones people leave out:
 
 **Unit economics with real arithmetic.** Show the calculation. If one beachhead produces $18k of revenue, write that number even though it's unimpressive — especially then.
