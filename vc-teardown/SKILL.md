@@ -1,6 +1,9 @@
 ---
 name: vc-teardown
 description: Stress-test a business idea as a skeptical VC, then rebuild it into a business plan with a defensible moat, business model, GTM, unit economics and kill criteria. Use this whenever the user describes a startup idea, product concept, app idea, side business, marketplace, portal, platform or "I'm thinking of building X" — however briefly or vaguely they describe it — and especially when they ask to validate it, poke holes in it, challenge assumptions, act as a VC or investor, find the moat, or write a business plan, MVP scope, or go-to-market. Also use when the user wants a second opinion on whether an idea is worth building, or asks what the competition looks like.
+license: MIT
+metadata:
+  version: "1.1.0"
 ---
 
 # VC Teardown → Moat → Plan
