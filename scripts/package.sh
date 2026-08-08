@@ -15,12 +15,18 @@ cd "$repo_root"
 
 skill_dir="vc-teardown"
 bundle="vc-teardown.skill"
+alias_bundle="vc-teardown.zip"
 
 python3 scripts/validate.py "$skill_dir"
 
-rm -f "$bundle"
+rm -f "$bundle" "$alias_bundle"
 zip -r -q "$bundle" "$skill_dir" \
   -x '*.DS_Store' -x '__MACOSX/*' -x '*/__pycache__/*'
 
-echo "built $bundle ($(du -h "$bundle" | cut -f1))"
+# Same archive under both names. The .skill extension is what the README and
+# past releases use and the upload dialog accepts it, but the documented format
+# is a plain zip — shipping both means no one is blocked by a strict file picker.
+cp "$bundle" "$alias_bundle"
+
+echo "built $bundle and $alias_bundle ($(du -h "$bundle" | cut -f1) each)"
 unzip -l "$bundle"

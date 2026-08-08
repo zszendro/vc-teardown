@@ -48,20 +48,36 @@ It's also calibrated not to be contrarian for sport. If a challenge has a good a
 
 ## Install
 
-**Claude apps** — download `vc-teardown.skill` from [Releases](../../releases) and click **Save skill** on the file card in a conversation.
+Two routes, and they are genuinely different mechanisms rather than two ways of doing the same thing. Skills **do not sync between them** — installing in the Claude apps does not make the skill available in Claude Code, or the reverse. Pick the one matching where you work, or do both.
 
-**Claude Code** — clone anywhere, then symlink the skill folder into your skills directory:
+### Claude apps — web, desktop, mobile
+
+Download `vc-teardown.skill` from [Releases](../../releases), then in the desktop app or on claude.ai:
+
+**Customize → Skills → Add → Upload a skill**
+
+Select the downloaded file. Claude reads the `SKILL.md` inside and shows you a summary before enabling it.
+
+This is a **cloud upload, not a local install.** The skill is stored against your Anthropic account rather than on your computer — no folder is created on disk, and nothing appears in `~/.claude/skills/`. When Claude invokes the skill, it's mounted into that session's sandbox for the duration and torn down afterwards. Because it lives with your account, one upload covers web, desktop and mobile.
+
+Requires a **Pro, Max, Team or Enterprise** plan with code execution enabled. Custom skills are per-user — they can't be shared org-wide or managed centrally by an admin, so each person uploads their own copy.
+
+The asset is a zip archive that happens to carry a `.skill` extension, which the upload dialog accepts. If yours filters strictly for `.zip`, `vc-teardown.zip` on the same release is byte-for-byte the same file.
+
+### Claude Code
+
+Clone anywhere, then symlink the inner skill folder into your skills directory:
 
 ```bash
 git clone https://github.com/zszendro/vc-teardown.git ~/src/vc-teardown
 ln -s ~/src/vc-teardown/vc-teardown ~/.claude/skills/vc-teardown
 ```
 
-Claude Code follows the symlink and reads `SKILL.md` from the target, so `git pull` updates the skill in place.
+Claude Code follows the symlink and reads `SKILL.md` from the target, so `git pull` updates the skill in place. Unlike the app route this is genuinely local — the files stay on your machine and nothing is uploaded.
 
-Cloning straight into `~/.claude/skills/vc-teardown` does **not** work: this repo's root holds the README and LICENSE, so `SKILL.md` would land at `~/.claude/skills/vc-teardown/vc-teardown/SKILL.md` — one level deeper than skill discovery looks.
+> **Don't clone straight into `~/.claude/skills/vc-teardown`.** This repo's root holds the README and LICENSE, so `SKILL.md` would land at `~/.claude/skills/vc-teardown/vc-teardown/SKILL.md` — one level deeper than skill discovery looks. The skill then silently never loads, with no error to tell you why.
 
-**Manual** — copy the inner `vc-teardown/` folder (not the repo root) into wherever your setup loads skills from.
+Terminal Claude Code, the desktop app's Code sessions and the IDE extensions all read `~/.claude/skills/`. Cloud and Cowork sessions do **not** — they load the skills enabled on your claude.ai account, so use the app route above if you want it available there.
 
 ---
 

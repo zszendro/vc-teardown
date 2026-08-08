@@ -20,8 +20,9 @@ import yaml
 # https://agentskills.io — the only fields `.skill` packaging and claude.ai upload accept.
 SPEC_FIELDS = {"name", "description", "license", "compatibility", "metadata", "allowed-tools"}
 
-# description + when_to_use are truncated past this in the skill listing.
-DESCRIPTION_LIMIT = 1536
+# The API and claude.ai upload enforce a hard 1024 on `description`. Claude Code's
+# skill listing merely truncates at 1536, so 1024 is the binding constraint.
+DESCRIPTION_LIMIT = 1024
 
 errors: list[str] = []
 warnings: list[str] = []

@@ -25,17 +25,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   reproducibly, with validation that fails the build rather than the upload.
 - **`.github/workflows/validate.yml`** — runs both on every push and pull request.
 
+- **`vc-teardown.zip`** alongside `vc-teardown.skill` on the release — the same archive
+  under both names, so a strict file picker can't block the upload.
+
 ### Fixed
 
 - **The Claude Code install instruction.** Cloning into `~/.claude/skills/vc-teardown`
   put `SKILL.md` one directory deeper than skill discovery looks, so the skill silently
-  never loaded. The README now documents the supported symlink route, which also makes
-  `git pull` the update path.
+  never loaded, with no error explaining why. The README now documents the supported
+  symlink route, which also makes `git pull` the update path.
+- **The Claude apps install instruction**, which described a flow that doesn't exist. It
+  now gives the real path — Customize → Skills → Add → Upload a skill.
 
 ### Changed
 
+- **Install section rewritten.** It now states that the two routes are different
+  mechanisms and do not sync, that the app route is a cloud upload storing the skill
+  against your account rather than on disk, that it needs a Pro/Max/Team/Enterprise plan
+  with code execution enabled, and that cloud and Cowork sessions read the account's
+  skills rather than `~/.claude/skills/`.
+- **Dropped the "Manual" install option.** It described copying the folder "wherever your
+  setup loads skills from", which was vague enough to reproduce the path bug above and
+  covered no surface the two documented routes don't.
 - `SKILL.md` declares `license: MIT`, and its section 3 and 4 summaries list the new
   surfaces and the eval-set move.
+- `scripts/validate.py` caps `description` at 1024 rather than 1536 — the API and upload
+  path enforce 1024, so that's the binding limit.
 
 ## [1.0.1] — 2026-08-02
 
