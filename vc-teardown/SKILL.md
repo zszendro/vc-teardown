@@ -90,7 +90,9 @@ State the reframed positioning in one sentence the user could say out loud, then
 
 Use the structure in `references/plan-template.md`. It covers: market reality, the teardown, the reframed strategy, stakeholder use cases tiered MVP/v1.1/v2, business model with revenue lines in the order they turn on, unit economics, MVP scope and stack, GTM, metrics, risk register, kill criteria, and open questions.
 
-**Write the full plan: 2,500–4,000 words.** Every section carries its own weight — a plan that lands under 2,000 words has almost certainly dropped the unit economics arithmetic, the risk register, or the build sequence, which are the parts that make it useful. Depth per section matters more than breadth: four sections written properly beat nine sections listed.
+**Write the full plan: roughly 2,500–4,000 words.** Every section carries its own weight — a plan that lands under 2,000 words has almost certainly dropped the unit economics arithmetic, the risk register, or the build sequence, which are the parts that make it useful. Depth per section matters more than breadth: four sections written properly beat nine sections listed.
+
+Write it once, at the depth each section needs, and move on. The word range is a sanity check rather than a specification — **do not run compression passes to land inside it.** Re-editing a finished plan to hit a number burns the user's time and strips the arithmetic before it strips the padding.
 
 `references/example-teardown.md` is a complete pass over one idea — read it when you want the shape and density of the output rather than the rules for producing it. Two cautions. Its market facts are researched and cited, which is the standard to match, but they were current in August 2026 and will age. And **its plan sections are deliberately compressed to about a quarter length** — only section 5 is reproduced fully. Match the density of that section, not the length of the file.
 

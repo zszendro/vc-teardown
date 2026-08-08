@@ -50,7 +50,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   1.0.1 did. Section 5 of the example is now reproduced at full depth as the density
   reference, every other section carries an explicit `[full length: ~N words]` marker, and
   the 2,500–4,000 word target is now stated in `SKILL.md` itself rather than only in
-  `plan-template.md`.
+  `plan-template.md`. Verified by running the skill end to end on an unrelated idea: 5,933
+  words, all sections present, from a run given no hint that length was being measured.
+- **The word range is explicitly not a target to iterate against.** That same test run
+  spent about ten minutes in "compression passes to hit the binding word range" without
+  converging — a stall is a worse outcome than a plan that runs long. Both `SKILL.md` and
+  `plan-template.md` now say to write once at the depth each section needs and skip the
+  compression pass, noting that re-editing strips arithmetic before it strips padding.
 - **Install section rewritten.** It now states that the two routes are different
   mechanisms and do not sync, that the app route is a cloud upload storing the skill
   against your account rather than on disk, that it needs a Pro/Max/Team/Enterprise plan

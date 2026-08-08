@@ -4,7 +4,9 @@ Structure for the deliverable. Adapt section depth to the idea; keep the order �
 
 Aim for 2,500–4,000 words. Longer stops being read; shorter can't carry unit economics and a risk register.
 
-That range is binding. Note that `example-teardown.md` compresses its plan sections to roughly a quarter length to keep the file small — only its section 5 shows full depth. Match that section's density across all of these, not the example's overall length.
+Treat that range as a sanity check, not a target to iterate against. Write each section at the depth it needs and let the total land where it lands. **Do not rewrite a finished plan to bring it inside the range** — compression passes cost the reader nothing and cost you time, and the first thing they strip is usually the arithmetic. Running long is much better than running thin.
+
+Note that `example-teardown.md` compresses its plan sections to roughly a quarter length to keep the file small — only its section 5 shows full depth. Match that section's density across all of these, not the example's overall length.
 
 ---
 
