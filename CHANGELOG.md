@@ -17,16 +17,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   proprietary model or eval set, and regulatory or license position. "Sequence the moat"
   renumbers from 9 to 12 to stay last as the capstone.
 - **`references/example-teardown.md`** — one idea worked end to end, so the output shape
-  is visible without installing the skill. Its market facts are invented for
-  illustration and the file says so.
+  is visible without installing the skill. Produced by running the skill on itself, with
+  researched and footnoted market facts — named competitors and their actual funding, a
+  city audit, real price anchors — rather than illustrative ones. Figures carry a date and
+  a re-verify warning. Where the plan needs a number that can't be sourced, it's labelled
+  an assumption instead.
 - **`CHANGELOG.md`** and `metadata.version` in `SKILL.md`, so an installed copy carries a
   version string.
 - **`scripts/validate.py` and `scripts/package.sh`** — the `.skill` bundle is now built
   reproducibly, with validation that fails the build rather than the upload.
 - **`.github/workflows/validate.yml`** — runs both on every push and pull request.
-
-- **`vc-teardown.zip`** alongside `vc-teardown.skill` on the release — the same archive
-  under both names, so a strict file picker can't block the upload.
 
 ### Fixed
 

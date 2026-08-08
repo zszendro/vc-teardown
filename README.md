@@ -62,7 +62,7 @@ This is a **cloud upload, not a local install.** The skill is stored against you
 
 Requires a **Pro, Max, Team or Enterprise** plan with code execution enabled. Custom skills are per-user — they can't be shared org-wide or managed centrally by an admin, so each person uploads their own copy.
 
-The asset is a zip archive that happens to carry a `.skill` extension, which the upload dialog accepts. If yours filters strictly for `.zip`, `vc-teardown.zip` on the same release is byte-for-byte the same file.
+The asset is a zip archive carrying a `.skill` extension, which the upload dialog accepts as-is. If a file picker ever refuses it, renaming the extension to `.zip` changes nothing about the contents.
 
 ### Claude Code
 

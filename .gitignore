@@ -1,6 +1,5 @@
 # Packaged skill build artifacts — attach to Releases instead
 *.skill
-vc-teardown.zip
 
 .DS_Store
 __pycache__/
