@@ -1,0 +1,32 @@
+name: validate
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install pyyaml
+
+      # Frontmatter must stay within the six-field Agent Skills spec, or the
+      # .skill bundle fails to upload to claude.ai.
+      - name: Validate skill
+        run: python3 scripts/validate.py vc-teardown
+
+      - name: Build bundle
+        run: bash scripts/package.sh
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vc-teardown-skill
+          path: vc-teardown.skill

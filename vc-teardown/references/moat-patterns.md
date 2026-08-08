@@ -101,7 +101,51 @@ Go narrow enough that the workflow, vocabulary, integrations and compliance are 
 
 ---
 
-## Pattern 9 — Sequence the moat
+## Pattern 9 — Embedded distribution
+
+**When:** the plan requires people to adopt a new destination — another tab, another login, another tool to remember.
+
+Every new destination competes with the user's existing habit and loses most of the time. The alternative is to put the product inside the surface where the work already happens: the spreadsheet, the inbox, the CRM, the IDE, the messaging tool, the system of record the team already opens every morning.
+
+This trades reach for retention, deliberately. You inherit the host's usage frequency instead of manufacturing your own, and the product stops being something people have to remember to use. It also inverts the churn question — leaving means removing something from a workflow rather than declining to open an app.
+
+*Example:* a reporting tool nobody logs into becomes a scheduled digest in the channel where the team already argues about the numbers.
+
+**Test:** if the host surface vanished tomorrow, would users seek this out directly? If yes, this is genuine embedded distribution. If no, re-read challenge 18 — you've bought retention with dependency, and the plan needs to say how it earns a direct relationship later.
+
+---
+
+## Pattern 10 — Proprietary model or eval set
+
+**When:** the product is AI and the base model is one your competitor can call with the same API key.
+
+The weights are not the moat. The two things that can be owned are a fine-tune or retrieval corpus built on data nobody else holds — which is Pattern 2 wearing different clothes — and, more overlooked, **the eval set.**
+
+Knowing precisely what "correct" means in a domain, with a labelled corpus of the hard and ambiguous cases, is what lets a team ship model changes without breaking customers. It compounds: every production failure becomes a test case, and the set gets harder to replicate the longer the product runs. Competitors can copy the prompt in an afternoon; they cannot copy three years of knowing which outputs were wrong and why.
+
+This is also the honest answer to accuracy economics. A team that can measure quality can safely automate the review step; one that can't must keep a human on every output, and that shows up in the margin.
+
+**Test:** could a competent team match your output quality next quarter using the same base model and a week of prompt iteration? If yes, name whether the data or the evals is the moat — and if neither, there isn't one.
+
+---
+
+## Pattern 11 — Regulatory or license position
+
+**When:** the category has a gate — a licence, certification, accreditation, audit, or approval that takes real time to clear.
+
+Founders treat the gate as a cost. It is also the wall. Anything that takes eighteen months, a lawyer, and an audit to obtain is by definition something a fast follower cannot obtain quickly, and unlike a feature gap it does not close with engineering effort.
+
+The move is to clear the gate early and deliberately, then make it part of the product's value rather than a compliance line item — the buyer who needs the certification can only buy from the small set who hold it. In regulated buying, "we're the ones who can actually sign this" often beats a better product.
+
+The caution: this is only a moat if the gate is genuinely hard and genuinely required. A voluntary badge anyone can buy is not a wall, and a gate that a well-funded competitor clears in a quarter just delays them.
+
+*Example:* the SOC 2 report, the state licence, or the payer contract that turns an eighteen-month enterprise sales cycle into a shortlist of three vendors.
+
+**Test:** name the specific credential, the time and cost to obtain it, and who is disqualified without it. If you can't name who it excludes, it isn't a moat.
+
+---
+
+## Pattern 12 — Sequence the moat
 
 Moats are rarely present at launch; they accrue. State explicitly which mechanism holds at each stage:
 

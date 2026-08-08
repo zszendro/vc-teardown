@@ -14,13 +14,13 @@ Most ideas fail not because they're bad, but because the obvious version is alre
 
 **2. Research** — searches for direct incumbents, free substitutes, adjacent software your buyer already pays for, and evidence the pain is real. This step is non-negotiable: skipping it produces generic startup advice.
 
-**3. Teardown** — 8–12 numbered challenges drawn from a library of 16 attack surfaces. Every challenge ends in a concrete revision. Criticism that doesn't change the plan doesn't count.
+**3. Teardown** — 8–12 numbered challenges drawn from a library of 20 attack surfaces. Every challenge ends in a concrete revision. Criticism that doesn't change the plan doesn't count.
 
-**4. Moat** — the reframe. Nine patterns for finding defensibility, including the two that do most of the work: *generate the data instead of aggregating it*, and *find the incumbent's metric mismatch*.
+**4. Moat** — the reframe. Twelve patterns for finding defensibility, including the two that do most of the work: *generate the data instead of aggregating it*, and *find the incumbent's metric mismatch*.
 
 **5. Plan** — market reality, tiered use cases, revenue lines ordered by when they turn on, unit economics with the actual arithmetic, MVP scope and stack, GTM, risk register, and falsifiable kill criteria.
 
-**6. Delivery** — a written plan, plus an appendix mapping every element of your original idea to where it landed.
+**6. Delivery** — a written plan of 2,500–4,000 words, plus an appendix mapping every element of your original idea to where it landed. It then offers what comes next: expanding the challenge that matters most, a PDF for an investor, a one-page executive summary, a deck outline, or the economics re-run on your own numbers.
 
 ---
 
@@ -48,15 +48,36 @@ It's also calibrated not to be contrarian for sport. If a challenge has a good a
 
 ## Install
 
-**Claude apps** — download `vc-teardown.skill` from [Releases](../../releases) and click **Save skill** on the file card in a conversation.
+Two routes, and they are genuinely different mechanisms rather than two ways of doing the same thing. Skills **do not sync between them** — installing in the Claude apps does not make the skill available in Claude Code, or the reverse. Pick the one matching where you work, or do both.
 
-**Claude Code** — clone into your skills directory:
+### Claude apps — web, desktop, mobile
+
+Download `vc-teardown.skill` from [Releases](../../releases), then in the desktop app or on claude.ai:
+
+**Customize → Skills → Add → Upload a skill**
+
+Select the downloaded file. Claude reads the `SKILL.md` inside and shows you a summary before enabling it.
+
+This is a **cloud upload, not a local install.** The skill is stored against your Anthropic account rather than on your computer — no folder is created on disk, and nothing appears in `~/.claude/skills/`. When Claude invokes the skill, it's mounted into that session's sandbox for the duration and torn down afterwards. Because it lives with your account, one upload covers web, desktop and mobile.
+
+Requires a **Pro, Max, Team or Enterprise** plan with code execution enabled. Custom skills are per-user — they can't be shared org-wide or managed centrally by an admin, so each person uploads their own copy.
+
+The asset is a zip archive carrying a `.skill` extension, which the upload dialog accepts as-is. If a file picker ever refuses it, renaming the extension to `.zip` changes nothing about the contents.
+
+### Claude Code
+
+Clone anywhere, then symlink the inner skill folder into your skills directory:
 
 ```bash
-git clone https://github.com/zszendro/vc-teardown.git ~/.claude/skills/vc-teardown
+git clone https://github.com/zszendro/vc-teardown.git ~/src/vc-teardown
+ln -s ~/src/vc-teardown/vc-teardown ~/.claude/skills/vc-teardown
 ```
 
-**Manual** — copy the `vc-teardown/` folder into wherever your setup loads skills from.
+Claude Code follows the symlink and reads `SKILL.md` from the target, so `git pull` updates the skill in place. Unlike the app route this is genuinely local — the files stay on your machine and nothing is uploaded.
+
+> **Don't clone straight into `~/.claude/skills/vc-teardown`.** This repo's root holds the README and LICENSE, so `SKILL.md` would land at `~/.claude/skills/vc-teardown/vc-teardown/SKILL.md` — one level deeper than skill discovery looks. The skill then silently never loads, with no error to tell you why.
+
+Terminal Claude Code, the desktop app's Code sessions and the IDE extensions all read `~/.claude/skills/`. Cloud and Cowork sessions do **not** — they load the skills enabled on your claude.ai account, so use the app route above if you want it available there.
 
 ---
 
@@ -84,20 +105,21 @@ Two things worth telling it up front, since they change the analysis: **where yo
 vc-teardown/
 ├── SKILL.md                        # workflow + tone calibration
 └── references/
-    ├── challenge-library.md        # 16 attack surfaces
-    ├── moat-patterns.md            # 9 reframes
-    └── plan-template.md            # output structure
+    ├── challenge-library.md        # 20 attack surfaces
+    ├── moat-patterns.md            # 12 reframes
+    ├── plan-template.md            # output structure
+    └── example-teardown.md         # one idea, worked end to end
 ```
 
 Reference files load only when needed, so the skill stays cheap in context until it's actually working.
 
-### The 16 challenges
+### The 20 challenges
 
-Competition · Free substitutes · Monetization · Willingness to pay · Cold start · Distribution · Buyer incentive · Sales cycle · Data availability · Regulatory & liability · Founder-market fit · Capital efficiency · Defensibility · Feature-not-a-company · Retention · Scale honesty
+Competition · Free substitutes · Monetization · Willingness to pay · Cold start · Distribution · Buyer incentive · Sales cycle · Data availability · Regulatory & liability · Founder-market fit · Capital efficiency · Defensibility · Feature-not-a-company · Retention · Scale honesty · Timing · Platform dependency · AI-native risk · Atoms and capital intensity
 
-### The 9 moat patterns
+### The 12 moat patterns
 
-Demote the commodity · Generate the data, don't aggregate it · Sell operational relief, not marketing exposure · The incumbent's metric mismatch · Granted distribution beats won distribution · The unserved 80% · Institutional switching cost · Vertical depth over horizontal reach · Sequence the moat
+Demote the commodity · Generate the data, don't aggregate it · Sell operational relief, not marketing exposure · The incumbent's metric mismatch · Granted distribution beats won distribution · The unserved 80% · Institutional switching cost · Vertical depth over horizontal reach · Embedded distribution · Proprietary model or eval set · Regulatory or license position · Sequence the moat
 
 ---
 
