@@ -37,8 +37,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **The Claude apps install instruction**, which described a flow that doesn't exist. It
   now gives the real path — Customize → Skills → Add → Upload a skill.
 
+- **A conversational close.** `SKILL.md` section 6 now ends the delivery by naming the one
+  or two things the analysis is least sure about, then offering three or four specific next
+  steps — expanding a named challenge, a PDF, a one-page executive summary, a deck outline,
+  re-running the economics on the user's own numbers, or a teardown of the reframe itself.
+  Guarded so offers follow the deliverable and never replace it.
+
 ### Changed
 
+- **Guards against the worked example shortening output.** An in-context example anchors
+  harder than an instruction, and a compressed one risked producing thinner plans than
+  1.0.1 did. Section 5 of the example is now reproduced at full depth as the density
+  reference, every other section carries an explicit `[full length: ~N words]` marker, and
+  the 2,500–4,000 word target is now stated in `SKILL.md` itself rather than only in
+  `plan-template.md`.
 - **Install section rewritten.** It now states that the two routes are different
   mechanisms and do not sync, that the app route is a cloud upload storing the skill
   against your account rather than on disk, that it needs a Pro/Max/Team/Enterprise plan

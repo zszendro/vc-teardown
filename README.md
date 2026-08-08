@@ -20,7 +20,7 @@ Most ideas fail not because they're bad, but because the obvious version is alre
 
 **5. Plan** — market reality, tiered use cases, revenue lines ordered by when they turn on, unit economics with the actual arithmetic, MVP scope and stack, GTM, risk register, and falsifiable kill criteria.
 
-**6. Delivery** — a written plan, plus an appendix mapping every element of your original idea to where it landed.
+**6. Delivery** — a written plan of 2,500–4,000 words, plus an appendix mapping every element of your original idea to where it landed. It then offers what comes next: expanding the challenge that matters most, a PDF for an investor, a one-page executive summary, a deck outline, or the economics re-run on your own numbers.
 
 ---
 

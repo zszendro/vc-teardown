@@ -1,15 +1,24 @@
 # Worked Example
 
-A real pass over one idea, to show the shape of the output. The teardown is reproduced in
-full because that section is the distinctive one; the plan sections are abridged to their
-skeleton — see `plan-template.md` for what each expands to at full length.
+A real pass over one idea, to show the shape and density of the output.
 
-> **The market facts below are researched and sourced, not illustrative.** They were
-> current as of August 2026 and will age — funding rounds, review times and competitive
-> positions all move. Re-verify before relying on any of them. What should generalise is
-> the method: every challenge names a real company, a real number, or a real quoted
-> complaint, and every challenge ends in a change. Where the plan needs a figure that
-> can't be sourced, it is labelled an assumption rather than dressed up as a finding.
+> ## ⚠ This file is a format reference. It is never a length target.
+>
+> **The plan sections here are deliberately compressed to roughly a quarter of their real
+> length.** A genuine plan runs **2,500–4,000 words** (`plan-template.md`), with every
+> section at the depth of section 5 below — which is the one section reproduced at full
+> length so the target density is visible.
+>
+> Every other section carries a `[full length: ~N words]` marker showing what was cut.
+> **Write the full version. Do not imitate the compression.** If your output resembles the
+> stub sections rather than section 5, it is too thin.
+
+> **The market facts are researched and sourced, not illustrative.** They were current as
+> of August 2026 and will age — funding rounds, review times and competitive positions all
+> move. Re-verify before relying on any of them. What should generalise is the method:
+> every challenge names a real company, a real number, or a real quoted complaint, and
+> every challenge ends in a change. Where the plan needs a figure that can't be sourced,
+> it is labelled an assumption rather than dressed up as a finding.
 
 **The brief:** *"An AI tool that drafts municipal building permit applications. I'm a
 contractor, I've filed hundreds of these, they're miserable. Bootstrapping, based in
@@ -185,46 +194,114 @@ the headline, Procore integration, or anything touching structural calculations.
 
 ---
 
-## 4–8. Plan skeleton — abridged
+## 4. Stakeholders and use cases
 
-**Stakeholders.** Owner-operator `[MVP]` — pre-submission check, correction archive.
-Office manager `[MVP]` — submission tracking. Field crew `[v1.1]` — inspection status.
-Licensed reviewer `[v2]` — human-signoff tier. Platform/admin `[MVP]` — per-jurisdiction
-rule maintenance, which is the real recurring cost and is always underestimated.
+`[full length: ~500 words — one subsection per stakeholder, each with tiered use cases and
+a sentence on why the tier boundary falls where it does. See template §4.]`
 
-**Business model.** Ordered by when each line turns on:
+Owner-operator `[MVP]` — pre-submission check, correction archive. Office manager `[MVP]`
+— submission tracking. Field crew `[v1.1]` — inspection status. Licensed reviewer `[v2]` —
+human-signoff tier. Platform/admin `[MVP]` — per-jurisdiction rule maintenance, which is
+the real recurring cost and is always underestimated.
+
+---
+
+## 5. Business model
+
+*This section is at full length. Every other section in this file should be this dense.*
+
+**Revenue lines, ordered by when they turn on — not by size:**
 
 | # | Line | Who pays | Price | When |
 |---|---|---|---|---|
 | 1 | Firm subscription | Small residential contractors | $250/mo | Launch |
 | 2 | Reviewed submissions | Same, per permit | $150 | Month 9 |
-| 3 | Correction-pattern data | Insurers, design firms, jurisdictions | TBD | Year 3+, not underwritten |
+| 3 | Correction-pattern data | Insurers, design firms, jurisdictions | TBD | Year 3+ |
 
-**Unit economics.** 50 × $250 × 12 = **$150k** per mature beachhead (penetration assumed,
-not measured). CAC is high and human early — this is a walked-in, association-and-supply-house
-sale — and falls with local density. Gross margin is good but not software-good, because
-rule maintenance is ongoing human work.
+**Line 1 is the only launch revenue.** Line 2 requires a licensed reviewer on retainer,
+which is a hiring decision that shouldn't be made before the subscription proves the
+segment pays at all. Line 3 is the interesting one and must not be pitched: it depends on
+a correction corpus that doesn't exist yet, and quoting a price for it before the corpus
+exists is exactly the kind of thing that fails diligence.
 
-**Honest scale verdict: bootstrap SaaS.** A decent one. A bad venture pitch, and a worse
-one to make in a category where the funded players raised nine figures between them.
+**Price rationale.** $250/month sits deliberately below the expediter anchor. Residential
+expediting runs **$500–$2,500 per project**, with minor permits at $200–$400 and major
+remodels at $500–$1,000.[^exp] A firm filing eight permits a month that avoids even one
+resubmission has cleared the subscription cost several times over. It also sits under the
+threshold where a small business owner needs to think about it — an important property,
+because there is no procurement process to appeal to and no budget line to displace.
 
-**MVP scope.** In: three Denver-area jurisdictions, pre-submission check against a
-hand-built rule set, code-section citations, correction archive. Out: drafting from
-scratch, e-filing, mobile, anything beyond those three jurisdictions.
+**Unit economics — the arithmetic, with assumptions stated as assumptions:**
+
+- *Assumption:* ~200 addressable small residential firms in Denver metro. This is not
+  sourced and is the single most load-bearing unsourced number in the plan.
+- *Assumption:* 25% penetration at maturity, i.e. 50 paying firms.
+- Revenue per mature beachhead: **50 × $250 × 12 = $150,000/year.**
+- Ten comparable metros at the same penetration: **$1.5M/year.**
+
+**CAC.** High and human at the start. This is a walked-in sale through supply houses and
+the local builders' association — realistically several hours of founder time per customer,
+which at any honest hourly rate means CAC exceeds first-year revenue for the earliest
+cohort. It falls with local density: in a trade where contractors talk, the tenth customer
+in a metro costs a fraction of the first. Paid acquisition never works at this ACV and
+should not be attempted.
+
+**LTV and margin.** Churn should be low *if* the retention layer holds — the correction
+archive accrues value the longer a firm uses it, which is the switching cost. But gross
+margin is good rather than software-good: per-jurisdiction rule maintenance is ongoing
+human work that scales with coverage, not with customers. Every new jurisdiction is a
+fixed cost incurred before its first customer. That is the structural reason to go deep in
+three jurisdictions rather than shallow across thirty.
+
+**The honest scale verdict: this is a bootstrap SaaS.** A decent one — $150k from one
+metro is a real business for one or two people. It is a bad venture pitch, and a
+particularly bad one to make in a category where PermitFlow and GreenLite have raised
+roughly $163M between them.[^pf-a][^pf-b][^gl-a][^gl-b] What would have to change to move
+it up a category: line 3 becoming a real, priced product, which is a year-three question
+and cannot be underwritten now.
+
+**What we are explicitly not doing:** national coverage, selling to the city, drafting as
+the headline feature, Procore integration, or anything touching structural calculations.
+
+---
+
+## 6. MVP scope and technical plan
+
+`[full length: ~600 words — in-scope numbered, out-of-scope with reasons, stack with
+rationale, core data model, and a week-by-week build sequence. See template §6.]`
+
+In: three Denver-area jurisdictions, pre-submission check against a hand-built rule set,
+code-section citations, correction archive. Out: drafting from scratch, e-filing, mobile,
+anything beyond those three jurisdictions.
 
 **The cheapest test, and it costs time not money:** collect 30 real correction letters from
 Denver contractors and check by hand whether a rule set plus prior corrections would have
 predicted them. **Build nothing until that passes.** This also settles C8 — if the letters
 turn out to be routinely published, the moat is gone and the plan should stop.
 
-**Go to market.** Denver metro. Hand-recruit 20 firms through supply houses and the local
-builders' association, run their next filings manually, publish the first-time-approval
-delta, sell that number. SEO is a year-two asset; paid acquisition never works at this ACV.
+---
 
-**Metrics and kill criteria.** North star: submissions checked per week. Kill criteria,
-agreed before spending: *no measurable first-time-approval improvement across 30 manual
-filings by month 6 → the correction thesis is wrong, stop.* And: *fewer than 10 paying
-firms by month 12 → this segment won't buy software, stop.*
+## 7. Go to market
+
+`[full length: ~600 words — beachhead selection criteria, the core motion as numbered
+steps, channels ranked by honest expected value including the ones that won't work,
+retention mechanics, and a phase table for 12–18 months. See template §7.]`
+
+Denver metro. Hand-recruit 20 firms through supply houses and the local builders'
+association, run their next filings manually, publish the first-time-approval delta, sell
+that number. SEO is a year-two asset; paid acquisition never works at this ACV.
+
+---
+
+## 8. Metrics, risks, kill criteria
+
+`[full length: ~450 words — north star, five or six supporting metrics, and a risk register
+table with severity and mitigation. See template §8.]`
+
+North star: submissions checked per week. Kill criteria, agreed before spending: *no
+measurable first-time-approval improvement across 30 manual filings by month 6 → the
+correction thesis is wrong, stop.* And: *fewer than 10 paying firms by month 12 → this
+segment won't buy software, stop.*
 
 ---
 

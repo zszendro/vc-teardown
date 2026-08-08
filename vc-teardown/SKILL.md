@@ -90,7 +90,9 @@ State the reframed positioning in one sentence the user could say out loud, then
 
 Use the structure in `references/plan-template.md`. It covers: market reality, the teardown, the reframed strategy, stakeholder use cases tiered MVP/v1.1/v2, business model with revenue lines in the order they turn on, unit economics, MVP scope and stack, GTM, metrics, risk register, kill criteria, and open questions.
 
-`references/example-teardown.md` is a complete pass over one idea — read it when you want the shape of the output rather than the rules for producing it. Its market facts are researched and cited, which is the standard to match; they were current in August 2026 and will age, so treat them as an example of sourcing rather than as current data.
+**Write the full plan: 2,500–4,000 words.** Every section carries its own weight — a plan that lands under 2,000 words has almost certainly dropped the unit economics arithmetic, the risk register, or the build sequence, which are the parts that make it useful. Depth per section matters more than breadth: four sections written properly beat nine sections listed.
+
+`references/example-teardown.md` is a complete pass over one idea — read it when you want the shape and density of the output rather than the rules for producing it. Two cautions. Its market facts are researched and cited, which is the standard to match, but they were current in August 2026 and will age. And **its plan sections are deliberately compressed to about a quarter length** — only section 5 is reproduced fully. Match the density of that section, not the length of the file.
 
 Non-negotiable elements, because they're the ones people leave out:
 
@@ -106,9 +108,29 @@ Tier every use case MVP / v1.1 / v2. An untiered feature list is a wish, not a s
 
 ## 6. Deliver
 
-Default to a markdown file for plans over ~1,000 words; offer PDF if it's going to a partner or investor. Keep the conversational reply short — lead with what changed about their idea and why, not a summary of the document.
+Default to a markdown file for plans over ~1,000 words. Keep the conversational reply short and readable — lead with what changed about their idea and why, not a summary of the document. Talk to them like a person who has just spent an afternoon on their problem, not like a report generator handing over output.
 
 If the plan required a pivot, say so in the first two sentences of the reply. Users need to know their framing changed before they open a file that assumes it.
+
+Then flag the one or two things you are least sure about. Naming where the analysis is thin is more useful than projecting confidence across all of it, and it tells them where their own knowledge should override yours.
+
+### Close by offering what comes next
+
+The plan is a starting point, and the user usually wants something built on it. End the reply by offering **three or four specific things**, chosen from what this particular analysis actually surfaced:
+
+- **Go deeper on a specific challenge.** Name the one worth expanding — usually the challenge with the weakest evidence or the biggest consequence.
+- **A PDF of the plan**, if it's going to a partner, co-founder or investor.
+- **A one-page executive summary** — the verdict, the wedge, the ask, the kill criteria.
+- **A pitch-deck outline** built from the reframed positioning.
+- **Re-run the unit economics** under different assumptions: their pricing, their penetration estimate, a different beachhead.
+- **A teardown of the reframe itself**, attacked as hard as the original idea. Worth offering when the reframe is doing a lot of load-bearing work.
+- **The cheapest test, specified properly** — who to call, what to ask, what result would kill it.
+
+Two rules for the close:
+
+**Be specific, not generic.** "Let me know if you want anything else" is worthless. "Want me to expand C7 — the willingness-to-pay problem is the weakest part of this and probably decides it" gives them something to say yes to.
+
+**Deliver first, always.** Offers come after the plan exists, never instead of it. Never end a teardown with a question in place of the work, and never withhold a section pending an answer. If something genuinely needs their input, state the assumption you used, deliver on it, and note that the answer would change it.
 
 ## Tone
 
